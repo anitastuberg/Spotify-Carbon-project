@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Montserrat;
+    font-style: normal;
+}
+
+.header_i {
+    background-color: #cdb4db;
+    width: 100%;
+    height: 50px;
+    align-content: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.wrapper {
+    padding-left: 10%;
+    padding-right: 10%;
+    position: relative;
+    width: 100%;
+}
+
+.input {
+    bottom: 0; 
+    padding-bottom: 4%;
+    width: 100%;
+    position: fixed;
+}
+
+#input_field {
+    padding: 10px;
+    font-family: Montserrat;
+    border-radius: 15px;
+    width: 500px;
+    height: 30px;
+}
+
+#submit_btn {
+    width: 150px;
+    height: 40px;
+    padding: 20px;
+    padding-bottom: 35px;
+    border-radius: 10px;
+    border: 0;
+    font-family: Montserrat;
+    background-color: #cdb4db;
+    font-size: 1rem;
+}
+
+#submit_btn .hover  {
+   background-color: #773b9a;
+}
+
+.song_info {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    margin-right: 100px;
+}
+
+.title {
+    font-size: 1.74rem;
+    padding-right: 20px;
+    font-weight: 900;
+}
+
+.content {
+    font-size: 1.75rem;
+}
+
+.info_section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.div {
+    width: auto;
+}
+
+.intro {
+    align-self: center;
+}
+
+
+/* ---------- animation ------------- */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+}
+
+.title {
+  font-size: 10vw;
+  color: white;
+}
+
+canvas {
+  width: 100%;
+}

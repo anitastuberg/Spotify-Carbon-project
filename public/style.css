@@ -13,14 +13,10 @@
     text-align: center;
 }
 
-.nav {
-    position: fixed;
-}
-
 .header_i {
     align-items: center;
+    z-index: 2;
     width: 100%;
-    position: fixed;
     padding: auto;
 }
 
@@ -40,13 +36,10 @@
 }
 
 .input {
-    bottom: 0; 
-    padding-bottom: 4%;
     width: 100%;
-    position: fixed;
-    margin: 20%;
     margin-left: auto;
     margin-right: auto;
+    position: fixed;
 }
 
 #input_field {
@@ -78,22 +71,40 @@
 /* ---------- animation ------------- */
 .container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
   padding: 0;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  position: absolute;
 }
 
 .title {
-  font-size: 5vw;
+  font-size: 3vw;
   color: white;
   width: 100%;
 }
 
 canvas {
   width: 100%;
+}
+
+.song_info {
+    color: white;
+}
+
+.info_section {
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items: center;
+}
+
+#searchResults {
+    display: flex;
+    flex-direction: row;
 }

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -11,31 +10,72 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 </head>
 <body>
-    <nav>
-        <a href="./result.html"> Check song </a>
-    </nav>
-    
     <div class="header_i">
         <h1 class="title_header"> Self Data - Carbon Emissions </h1>
     </div>
     <div class="container">
-        <canvas id="canvas1">
-        </canvas>
-      </div>
+        <canvas id="canvas1"></canvas>
+    </div>
     <section class="wrapper">
         <div class="input">
+            <a href="http://localhost:3000/login">Login with Spotify</a>
             <h2 id="smaller_title"> Check the carbon imprint of your song</h2>
-            <form id="upload">
-                <input type=text id="input_field" placeholder="Song and artist">
-                <button type="submit" id="submit_btn" href="./result.html">Check song</button>
+            <form id="upload" onsubmit="event.preventDefault(); searchAndDisplayResult(event)">
+                <input type="text" id="input_field" placeholder="Song and artist">
+                <button type="submit" id="submit_btn">Check song</button>
             </form>
+            <div id="searchResults">
+                <!--<div id="song_image"></div>
+                <h2 id="song_title"></h2>
+                <p id="artist_name"></p>
+                <p id="carbon_emission"></p>-->
+
+            </div>
+
+            <script>
+                async function searchAndDisplayResult(event) {
+                    event.preventDefault();
+
+                    const query = document.getElementById('input_field').value;
+
+                    try {
+                        const response = await fetch(`http://localhost:3000/search?query=${encodeURIComponent(query)}`);
+
+                        if (response.ok) {
+                            const data = await response.json();
+                            displayResults(data);
+                        } else {
+                            console.error('Server response not OK:', response.statusText);
+                            searchResults.innerHTML = ("That is not a song")
+
+                        }
+                    } catch (error) {
+                        console.error('Error:', error.message);
+                    }
+                }
+
+                function displayResults(data) {
+                    const resultsContainer = document.getElementById('searchResults');
+                    resultsContainer.innerHTML = '';
+
+                    if (data.tracks && data.tracks.items.length > 0) {
+                        data.tracks.items.forEach(track => {
+                            const trackDiv = document.createElement('div');
+                            trackDiv.innerHTML = `
+                                <h3>${track.name}</h3>
+                                <img src="${track.album.images[0].url}" alt="${track.name}">
+                            `;
+                            resultsContainer.appendChild(trackDiv);
+                        });
+                    } else {
+                        resultsContainer.innerHTML = '<p>No results found</p>';
+                    }
+                }
+            </script>
         </div>
+    </section>
 </body>
 
 <script src="blob_animation.js"></script>
 <!--<script src="scripts/search_song.js"></script>-->
-
-
-
-
 </html>

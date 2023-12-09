@@ -17,9 +17,9 @@ const authorizationCode = '<insert authorization code>';
  * https://developer.spotify.com/dashboard/applications
  */
 const spotifyApi = new SpotifyWebApi({
-  clientId: '<insert client id>',
-  clientSecret: '<insert client secret>',
-  redirectUri: '<insert redirect URI>'
+  clientId: '9b11617004944b388d817c58b8f997c4',
+  clientSecret: 'e3bd39376815494ebee7e4349a025129',
+  redirectUri: 'folk.ntnu.no/anitasg/'
 });
 
 spotifyApi

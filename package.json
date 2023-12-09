@@ -1,0 +1,15 @@
+{
+  "name": "Spoticarbon",
+  "version": "1.0.0",
+  "description": "App to check your carbon emissions by listening to music",
+  "main": "server.js",
+  "scripts": {
+    "start": "npm start"
+  },
+  "dependencies": {
+    "cors": "^2.8.5"
+  },
+  "keywords": [],
+  "author": "Anita Stuberg Guldseth",
+  "license": "ISC"
+}

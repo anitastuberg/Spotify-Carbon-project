@@ -1,0 +1,452 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;    
+    font-style: normal;
+    color: white;
+}
+
+body {
+    margin: 0;
+    padding: 15px;
+    font-family: 'Montserrat', sans-serif;
+    line-height: inherit;
+    background-color: #000000;
+}
+
+.navbar {
+    color: white;
+    width: 100%;
+    position: absolute;
+    z-index: 4;
+    display: flex;
+    flex-direction: row;
+    align-content: flex-end;
+}
+
+.navbar a {
+    text-decoration: none;
+}
+
+.link {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.logo {
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+b, p {
+    text-align: left;
+}
+
+.wrapper {
+    width: 100%;
+    padding: 20px;
+    margin: 0;
+    text-align: center;
+    margin-top: 1rem;
+    background-color: #131212;
+
+}
+
+.header_i {
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   height: 40rem;
+   align-items: start;
+   margin-bottom: 5rem;
+   background-image: url('vinyl.jpg');
+   background-image: cover;
+   background-size: 100%;
+   margin: -15px -15px 0px -15px;
+   text-align: center;
+}
+
+#overlay_header {
+    background-color: rgba(0, 0, 0, 0.618);
+    width: 100%;
+    height: 40rem;
+    position: absolute;
+    margin: 0;
+}
+ 
+h1 {
+    font-size: 3rem;
+ }
+
+ .header_text {
+    z-index: 5;
+    align-self: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 200px;
+    margin-right: auto;
+ }
+
+ .header_paragraph {
+    width: 40rem;
+ }
+
+
+#login {
+    padding-left: auto;
+    padding-right: auto;
+    margin: auto;
+}
+
+#smaller_title {
+    font-size: 2vw;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.input_text {
+  align-self: center;
+}
+
+#input_field {
+    padding: 10px;
+    margin-top: 50px;
+    font-family: Montserrat;
+    border-radius: 15px;
+    width: 600px;
+    height: 40px;
+    font-size: 1.25rem;
+    color: #A7A7A7;
+    background-color: #222222;
+}
+
+input[type=submit]:active, input[type=submit]:focus {
+    background-color: #222222;
+    color: #A7A7A7;
+}
+
+input[type=submit]:focus {
+    background-color: #222222;
+    color: #A7A7A7;
+}
+
+#submit_btn {
+    padding: 20px 10px 10px 20px;
+    border-radius: 10px;
+    border: 0;
+    font-family: Montserrat;
+    background-color: #cdb4db;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+#submit_btn .hover  {
+   background-color: #773b9a;
+}
+
+
+/* ---------- animation ------------- */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  font-size: 3vw;
+  color: white;
+  width: 100%;
+}
+
+canvas {
+  width: 100%;
+  opacity: 40%;
+  z-index: 100;
+  position: absolute;
+  background-color: none;
+}
+
+.song_info {
+    color: white;
+}
+
+.info_section {
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items: center;
+}
+
+#searchResults {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    background-color: #131212;
+    padding: 15px;
+    border-radius: 15;
+    width: 100%;
+    height: auto;
+    min-height: 500px;
+}
+
+#songImage {
+    width: 200px;
+}
+
+
+.text {
+    width: 500px;
+}
+
+.text p{
+    color: white;
+    text-align: left;
+}
+
+
+
+.input a {
+    display: block;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    background-color: #3490dc;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+}
+
+#smaller_title {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+#upload {
+    margin-top: 1rem;
+}
+
+#input_field {
+    padding: 0.5rem;
+    border-radius: 50px;
+    background-color: #222222;
+    height: 45px;
+    border-color: #A7A7A7;
+    border-width: 2px;
+}
+
+#submit_btn {
+    background-color: #E9D7FF;
+    color: #000000;
+    padding: 1.25rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    width: fit-content;
+}
+
+
+/* Styles for the track cards */
+.track-card {
+    max-width: 300px;
+    width: 15rem;
+    height: 35rem;
+    margin: 0 auto 1rem;
+    background-color: #222222;
+    border: 1px solid #000000;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.track-card :hover {
+   cursor: pointer;
+}
+
+.track-card .img_wrapper {
+    width: 100%;
+}
+
+.track-card img {
+    width: 100%;
+    height: 15rem;
+    overflow: hidden;
+}
+
+.track-info {
+    padding: 1rem;
+}
+
+.track-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+.track-info p {
+    margin: 0;
+    color: #A7A7A7;
+}
+
+/* Styles for the large view track cards */
+.large-view {
+    max-width: 80%;
+    width: 40rem;
+    background-color: #222222;
+    border: 1px solid #000000;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+    z-index: 3; /* Ensure it appears above other elements */
+}
+
+.header_card {
+    margin-bottom: 20px;
+}
+
+.large-view .img_wrapper {
+    width: 100%;
+}
+
+.large-view img {
+    width: 100%;
+    height: 40rem;
+    overflow: hidden;
+}
+
+.large-view h1 {
+    font-size: 2rem;
+    color: #ffffff;
+    font-weight: bold;
+}
+.large-view h2 {
+    font-size: 1rem;
+    color: #A7A7A7;
+}
+
+.large-view p {
+    margin: 0;
+    color: #A7A7A7;
+}
+
+.large-info  {
+    padding: 20px;
+}
+
+.section_about {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+    background-color: #131212;
+    padding: 50px 100px 50px 100px;
+    place-content: space-between;
+}
+
+.steps {
+    display: flex;
+    flex-direction: column;
+}
+
+.steps h3{
+    font-weight: 900;
+    margin-bottom: 2px;
+}
+
+.steps p {
+    margin-bottom: 30px;
+}
+
+.footer {
+    height: 300px;
+    background-color: #131212;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 0;
+    padding: 50px 0 50px 50px;
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+}
+
+.footer_wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    width: 100%;
+    place-content: space-between;
+}
+
+.footer_txt {
+    padding: 20px;
+    color: white;
+    margin-right: 10%;
+}
+
+#read-more {
+    margin-top: 20px;
+    border-bottom: #ffffff;
+}
+
+#login {
+    background-color: #000000;
+    color: #b4fbce;
+    width: 100%;
+    padding-left: auto;
+    padding-right: auto;
+    text-decoration: none;
+}
+
+
+.exit_btn {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+}
+
+.exit_btn :hover{
+   cursor: pointer;
+}
+
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 6; /* Ensure it appears above other elements */
+}
+
+.about_project {
+    width: 100%;
+    padding: 200px;
+}

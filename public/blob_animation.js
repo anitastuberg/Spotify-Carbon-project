@@ -4,7 +4,7 @@ var height = canvas.height = window.innerHeight * 0.75;
 document.body.appendChild(canvas);
 var gl = canvas.getContext('webgl');
 
-var mouse = {x: 0, y: 0};
+var mouse = { x: 0, y: 0 };
 
 var numMetaballs = 30;
 var metaballs = [];
@@ -24,9 +24,7 @@ var vertexShaderSrc = `
 attribute vec2 position;
 
 void main() {
-// position specifies only x and y.
-// We set z to be 0.0, and w to be 1.0
-gl_Position = vec4(position, 0.0, 1.0);
+  gl_Position = vec4(position, 0.0, 1.0);
 }
 `;
 
@@ -39,27 +37,26 @@ const float HEIGHT = ` + (height >> 0) + `.0;
 uniform vec3 metaballs[` + numMetaballs + `];
 
 void main(){
-float x = gl_FragCoord.x;
-float y = gl_FragCoord.y;
+  float x = gl_FragCoord.x;
+  float y = gl_FragCoord.y;
 
-float sum = 0.0;
-for (int i = 0; i < ` + numMetaballs + `; i++) {
-vec3 metaball = metaballs[i];
-float dx = metaball.x - x;
-float dy = metaball.y - y;
-float radius = metaball.z;
+  float sum = 0.0;
+  for (int i = 0; i < ` + numMetaballs + `; i++) {
+    vec3 metaball = metaballs[i];
+    float dx = metaball.x - x;
+    float dy = metaball.y - y;
+    float radius = metaball.z;
 
-sum += (radius * radius) / (dx * dx + dy * dy);
+    sum += (radius * radius) / (dx * dx + dy * dy);
+  }
+
+  if (sum >= 0.99) {
+    gl_FragColor = vec4(mix(vec3(x / WIDTH, y / HEIGHT, 1.0), vec3(0, 0, 0), max(0.0, 1.0 - (sum - 0.99) * 100.0)), 1.0);
+    return;
+  }
+
+  gl_FragColor = vec4(0.0, 0.0, 0.0, 0.0);
 }
-
-if (sum >= 0.99) {
-gl_FragColor = vec4(mix(vec3(x / WIDTH, y / HEIGHT, 1.0), vec3(0, 0, 0), max(0.0, 1.0 - (sum - 0.99) * 100.0)), 1.0);
-return;
-}
-
-gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
-}
-
 `;
 
 var vertexShader = compileShader(vertexShaderSrc, gl.VERTEX_SHADER);
@@ -72,10 +69,10 @@ gl.linkProgram(program);
 gl.useProgram(program);
 
 var vertexData = new Float32Array([
-  -1.0,  1.0, // top left
-  -1.0, -1.0, // bottom left
-  1.0,  1.0, // top right
-  1.0, -1.0, // bottom right
+  -1.0, 1.0,
+  -1.0, -1.0,
+  1.0, 1.0,
+  1.0, -1.0,
 ]);
 var vertexDataBuffer = gl.createBuffer();
 gl.bindBuffer(gl.ARRAY_BUFFER, vertexDataBuffer);
@@ -84,17 +81,23 @@ gl.bufferData(gl.ARRAY_BUFFER, vertexData, gl.STATIC_DRAW);
 var positionHandle = getAttribLocation(program, 'position');
 gl.enableVertexAttribArray(positionHandle);
 gl.vertexAttribPointer(positionHandle,
-                       2, // position is a vec2
-                       gl.FLOAT, // each component is a float
-                       gl.FALSE, // don't normalize values
-                       2 * 4, // two 4 byte float components per vertex
-                       0 // offset into each span of vertex data
-                      );
+  2,
+  gl.FLOAT,
+  gl.FALSE,
+  2 * 4,
+  0
+);
 
 var metaballsHandle = getUniformLocation(program, 'metaballs');
 
 loop();
 function loop() {
+  // Set the clear color with transparency
+  gl.clearColor(0.0, 0.0, 0.0, 0.0);
+
+  // Clear the color buffer
+  gl.clear(gl.COLOR_BUFFER_BIT);
+
   for (var i = 0; i < numMetaballs; i++) {
     var metaball = metaballs[i];
     metaball.x += metaball.vx;
@@ -113,8 +116,8 @@ function loop() {
     dataToSendToGPU[baseIndex + 2] = mb.r;
   }
   gl.uniform3fv(metaballsHandle, dataToSendToGPU);
-  
-  //Draw
+
+  // Draw
   gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
 
   requestAnimationFrame(loop);
@@ -148,7 +151,7 @@ function getAttribLocation(program, name) {
   return attributeLocation;
 }
 
-canvas.onmousemove = function(e) {
+canvas.onmousemove = function (e) {
   mouse.x = e.clientX;
   mouse.y = e.clientY;
-}
+};

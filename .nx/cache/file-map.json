@@ -1,0 +1,108 @@
+{
+  "version": "6.0",
+  "nxVersion": "17.2.6",
+  "deps": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "spotify-web-api-node": "^5.0.2",
+    "@nx/netlify": "^17.0.0",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.3.6"
+  },
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "projectFileMap": {},
+    "nonProjectFiles": [
+      {
+        "file": ".DS_Store",
+        "hash": "5534576828158186351"
+      },
+      {
+        "file": "images/.DS_Store",
+        "hash": "14191953967302744341"
+      },
+      {
+        "file": "images/style.css",
+        "hash": "4727687305056414094"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "3448425840860994980"
+      },
+      {
+        "file": "package.json",
+        "hash": "4885881528852311639"
+      },
+      {
+        "file": "postcss.config.js",
+        "hash": "1579725330904862112"
+      },
+      {
+        "file": "public/about.html",
+        "hash": "16482140263720258322"
+      },
+      {
+        "file": "public/blob_animation.js",
+        "hash": "5046027389934896938"
+      },
+      {
+        "file": "public/exit_icon.png",
+        "hash": "11906425419244629475"
+      },
+      {
+        "file": "public/good4u.png",
+        "hash": "2157019268520480183"
+      },
+      {
+        "file": "public/index.html",
+        "hash": "4632463689741071203"
+      },
+      {
+        "file": "public/input.css",
+        "hash": "17412094053766827493"
+      },
+      {
+        "file": "public/result.html",
+        "hash": "7059498678068715826"
+      },
+      {
+        "file": "public/vinyl.jpg",
+        "hash": "18142673307962364863"
+      },
+      {
+        "file": "server.js",
+        "hash": "10087391515083380093"
+      },
+      {
+        "file": "src/.DS_Store",
+        "hash": "15042587819484053844"
+      },
+      {
+        "file": "src/getData.js",
+        "hash": "11186196869683145013"
+      },
+      {
+        "file": "src/package-lock.json",
+        "hash": "5129470861912092596"
+      },
+      {
+        "file": "src/package.json",
+        "hash": "15311515596444740231"
+      },
+      {
+        "file": "src/search_for_tracks.js",
+        "hash": "6311005499915120836"
+      },
+      {
+        "file": "src/search_song.js",
+        "hash": "18255482027764378023"
+      },
+      {
+        "file": "tailwind.config.js",
+        "hash": "3784328389895642110"
+      }
+    ]
+  }
+}

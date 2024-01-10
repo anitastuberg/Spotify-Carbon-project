@@ -6,22 +6,44 @@
     color: white;
 }
 
+.cursor {
+    position: fixed;
+    border-radius: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    pointer-events: none;
+    left: -100px;
+    top: 50%;
+    mix-blend-mode: difference; 
+    background-color: transparent;
+    z-index: 10000;
+    border: 1px solid white;
+    height: 40px;
+    width: 40px;
+    transition: all 300ms ease-out;
+  }
+
 body {
     margin: 0;
     padding: 15px;
     font-family: 'Montserrat', sans-serif;
     line-height: inherit;
     background-color: #000000;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
 }
+
 
 .navbar {
     color: white;
-    width: 100%;
+    width: 95%;
     position: absolute;
     z-index: 4;
     display: flex;
     flex-direction: row;
-    align-content: flex-end;
+    align-content: center;
+    padding: 20px;
 }
 
 .navbar a {
@@ -36,6 +58,7 @@ body {
 .logo {
     font-size: 2rem;
     text-decoration: none;
+    color: #ffffff;
 }
 
 h1, h2, h3 {
@@ -47,36 +70,50 @@ b, p {
     text-align: left;
 }
 
+.grey {
+    color: #A7A7A7;
+}
+
 .wrapper {
     width: 100%;
-    padding: 20px;
-    margin: 0;
+    height: 100%;
     text-align: center;
-    margin-top: 1rem;
     background-color: #131212;
-
+    box-sizing: border-box;
+    position: relative;
 }
 
 .header_i {
    display: flex;
    flex-direction: column;
    width: 100%;
-   height: 40rem;
+   height: 100vh;
    align-items: start;
-   margin-bottom: 5rem;
-   background-image: url('vinyl.jpg');
-   background-image: cover;
-   background-size: 100%;
-   margin: -15px -15px 0px -15px;
    text-align: center;
 }
 
-#overlay_header {
-    background-color: rgba(0, 0, 0, 0.618);
-    width: 100%;
-    height: 40rem;
+#header_video{
     position: absolute;
-    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-position: center;
+    object-fit: cover;
+}
+
+#video_overlay {
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    min-width: 100%;
+    min-height: 100%;
+    position: absolute;
 }
  
 h1 {
@@ -86,10 +123,11 @@ h1 {
  .header_text {
     z-index: 5;
     align-self: center;
-    margin-top: auto;
+    margin-top: 20%;
     margin-bottom: auto;
-    margin-left: 200px;
+    margin-left: 20%;
     margin-right: auto;
+    padding-top: 20px;
  }
 
  .header_paragraph {
@@ -97,10 +135,20 @@ h1 {
  }
 
 
+.login {
+    padding-top: 10px;
+    padding-bottom: 5px;
+    height: 30px;
+    background-color: white;
+    align-items: center;
+}
+
 #login {
+    color: black;
+    width: 100%;
     padding-left: auto;
     padding-right: auto;
-    margin: auto;
+    text-decoration: none;
 }
 
 #smaller_title {
@@ -114,7 +162,9 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
+    margin-top: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 .input_text {
@@ -123,7 +173,7 @@ h1 {
 
 #input_field {
     padding: 10px;
-    margin-top: 50px;
+    margin-top: 10px;
     font-family: Montserrat;
     border-radius: 15px;
     width: 600px;
@@ -148,13 +198,13 @@ input[type=submit]:focus {
     border-radius: 10px;
     border: 0;
     font-family: Montserrat;
-    background-color: #cdb4db;
+    background-color: #EDFFB9;
     font-size: 1rem;
     font-weight: bold;
 }
 
 #submit_btn .hover  {
-   background-color: #773b9a;
+   background-color: #b4fbce;
 }
 
 
@@ -177,53 +227,61 @@ input[type=submit]:focus {
   width: 100%;
 }
 
-canvas {
+.canvas1 {
   width: 100%;
-  opacity: 40%;
   z-index: 100;
   position: absolute;
   background-color: none;
+  margin-top: 0;
+  margin-bottom: auto;
 }
 
 .song_info {
     color: white;
 }
 
+.artist-name text {
+    font-size: large;
+    color: #222222;
+}
+
 .info_section {
-    padding: 30px;
+    padding: 10%;
     display: flex;
     flex-direction: row;
     position: relative;
     align-items: center;
+    overflow: hidden;
+    box-sizing: border-box;
+
 }
 
 #searchResults {
     display: flex;
     flex-direction: row;
-    gap: 5px;
+    gap: 1vw;
     background-color: #131212;
     padding: 15px;
     border-radius: 15;
     width: 100%;
     height: auto;
     min-height: 500px;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 #songImage {
     width: 200px;
 }
 
-
 .text {
-    width: 500px;
+    width: 600px;
 }
 
 .text p{
     color: white;
     text-align: left;
 }
-
-
 
 .input a {
     display: block;
@@ -267,8 +325,9 @@ canvas {
 /* Styles for the track cards */
 .track-card {
     max-width: 300px;
-    width: 15rem;
-    height: 35rem;
+    width: 16rem;
+    height: fit-content;
+    min-height: 32rem;
     margin: 0 auto 1rem;
     background-color: #222222;
     border: 1px solid #000000;
@@ -295,65 +354,86 @@ canvas {
 
 .track-info {
     padding: 1rem;
+    text-align: center;
+    align-items: center;
 }
 
 .track-info h3 {
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
     color: #ffffff;
+    text-align: center;
 }
 
 .track-info p {
     margin: 0;
     color: #A7A7A7;
+    text-align: center;
+
 }
 
 /* Styles for the large view track cards */
 .large-view {
     max-width: 80%;
-    width: 40rem;
+    display: flex;
+    flex-direction: column;
+    width: 25rem;
     background-color: #222222;
     border: 1px solid #000000;
     border-radius: 1rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-left: auto;
     margin-right: auto;
-    margin-top: 300px;
+    margin-top: 70px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
     z-index: 3; /* Ensure it appears above other elements */
+    position: relative;
 }
 
 .header_card {
     margin-bottom: 20px;
+    align-items: center;
+    text-align: center;
+    border-radius: 15;
 }
 
 .large-view .img_wrapper {
     width: 100%;
+    height: 50%;
 }
 
 .large-view img {
     width: 100%;
-    height: 40rem;
+    height: auto;
     overflow: hidden;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
 .large-view h1 {
     font-size: 2rem;
     color: #ffffff;
     font-weight: bold;
+    text-align: center;
 }
+
 .large-view h2 {
     font-size: 1rem;
     color: #A7A7A7;
+    text-align: center;
+
 }
 
 .large-view p {
     margin: 0;
     color: #A7A7A7;
+    text-align: center;
 }
 
 .large-info  {
     padding: 20px;
+    text-align: center;
+
 }
 
 .section_about {
@@ -361,34 +441,30 @@ canvas {
     flex-direction: row;
     margin-top: 1rem;
     background-color: #131212;
-    padding: 50px 100px 50px 100px;
+    padding: 50px 50px 50px 100px;
     place-content: space-between;
+    box-sizing: border-box;
+    align-items: center;
 }
 
-.steps {
-    display: flex;
-    flex-direction: column;
-}
-
-.steps h3{
+.text h3{
     font-weight: 900;
     margin-bottom: 2px;
 }
 
-.steps p {
+.text p {
     margin-bottom: 30px;
 }
 
 .footer {
-    height: 300px;
-    background-color: #131212;
-    width: 100%;
+    height: 30vh;
+    background-color: #000000;
     margin-top: 50px;
     margin-bottom: 0;
-    padding: 50px 0 50px 50px;
-    position: absolute;
+    padding: 4vw;
+    padding-top: 10vw;
+    position: sticky;
     display: flex;
-    align-items: flex-end;
 }
 
 .footer_wrapper {
@@ -396,29 +472,20 @@ canvas {
     flex-direction: row;
     align-items: end;
     width: 100%;
+    height: 100%;
     place-content: space-between;
+    box-sizing: border-box;
 }
 
 .footer_txt {
     padding: 20px;
-    color: white;
-    margin-right: 10%;
+    color: #A7A7A7;
 }
 
 #read-more {
     margin-top: 20px;
     border-bottom: #ffffff;
 }
-
-#login {
-    background-color: #000000;
-    color: #b4fbce;
-    width: 100%;
-    padding-left: auto;
-    padding-right: auto;
-    text-decoration: none;
-}
-
 
 .exit_btn {
     position: absolute;
@@ -432,13 +499,13 @@ canvas {
 }
 
 #overlay {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
     top: 0;
     width: 100%;
-    height: auto;
+    height: 100vh;
     background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
     display: flex;
     justify-content: center;
@@ -448,5 +515,27 @@ canvas {
 
 .about_project {
     width: 100%;
-    padding: 200px;
+    padding: 20px;
+}
+
+.wrapper_img_right {
+    width: 50%;
+    align-self: flex-end;
+}
+
+#music_img {
+    width: 80%;
+    height: auto;
+    border-radius: 15px;
+    align-self: right;
+}
+
+.about_page_wrapper {
+    padding-top: 10rem;
+    padding-left: 10rem;
+    background-color: #131212;
+    padding-bottom: 10rem;
+}
+
+.about_page {
 }

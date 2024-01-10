@@ -24,7 +24,6 @@ const spotifyApi = new SpotifyWebApi({
 });
 
 
-
 app.get('/login', (req, res) => {
   const authorizeURL = spotifyApi.createAuthorizeURL(['user-read-private', 'user-read-email'], 'state', true);
   res.redirect(authorizeURL);
@@ -46,6 +45,7 @@ app.get('/callback', async (req, res) => {
     res.status(500).send('Internal Server Error');
   }
 });
+
 
 // New route to handle the Spotify API search
 app.get('/search', async (req, res) => {

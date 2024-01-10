@@ -10,20 +10,62 @@
     <link rel="icon" href="http://example.com/favicon.png">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet">
-
 </head>
-<div class="navbar">
-    <a class="logo" href="#home">Carbonify</a>
-    <a href="about.html">About</a>
-</div>
 
 <body>
-    <section class="about_project">
-        <div class="text">
-            <h2>About the project</h2>
-            <p>This is a project made in the course Self Data at ELISAVA. 
+    <div class="navbar">
+        <a class="logo" href="index.html">Carbonify</a>
+        <a class="link" href="about.html">About</a>
+    </div>
+    <div class="about_page_wrapper">
+        <div class="about_page">
+            <h1> About the project </h1>
+            <p class="text">
+                The music industry has a big impact on the environment, both streaming and buying physical CDs and
+                vinyls.
+                This projects aim is to enlighten this in an interactive and informative way. The numbers are of course
+                simplified to make
+                this actually possible to make, but the message is the same.
+            </p>
+            <br />
+            <br />
+            <h2> How did we get the numbers ?</h2>
+
+            <p class="text">
+                Calculating the exact amount of carbon dioxide (CO2) emissions from streaming or listening to music on
+                Spotify can be a complex task, as it depends on various factors such as the energy efficiency of the
+                data centers used by Spotify, the energy efficiency of your device, and the source of the electricity
+                used in your region.
+            </p>
+            <br />
+
+            <p class="text">
+                To reduce your carbon footprint while streaming music, consider using energy-efficient devices,
+                streaming at lower quality settings, and supporting platforms that prioritize renewable energy sources
+                for their data centers.
+            </p>
+            <br />
+            <br />
+
+            <h2> The formula used to calculate the amount </h2>
+            <p class="text">
+                Total Carbon Footprint = Base Carbon Footprint x (Popularity Index + 0.1) x (Song Length in minutes + 1)
+            </p>
+            <br />
+            <p class="text">
+                The project is made in the course "Self Data" at ELISAVA - Faculty of Design and Engineering of
+                Barcelona.
+                The author is Anita Stuberg Guldseth, 3rd year student at "Design & Innovation".
+            </p>
+            <br />
+            <p class="text">
+                If you have any questions or inquiries please contact me at aguldseth@elisava.net.
+            </p>
         </div>
+        </section>
+    </div>
 </body>
+
 
 <footer class="footer">
     <container class="footer_wrapper">
@@ -32,7 +74,7 @@
             <p> Anita Stuberg Guldseth </p>
         </div>
         <div class="footer_txt">
-            <p id="read-more">Read more about the project</p>
+            <a href="about.html" id="read-more">Read more about the project</a>
         </div>
         <div class="footer_txt">
             <p>Self Data </p>
